@@ -1,0 +1,3 @@
+*.o
+r2-clippy
+.DS_Store
