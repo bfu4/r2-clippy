@@ -33,15 +33,6 @@ int r_cons_printf(const char* format, ...) R_PRINTF_CHECK(1, 2);
 // string padding function.
 const char* r_str_pad(const char, int);
 
-// codepoint function.
-size_t r_str_utf8_codepoint(const char*, size_t);
-
-// fullwith char function.
-bool r_str_char_fullwidth(const char*, size_t);
-
-// strlen, utf8.
-size_t r_str_len_utf8(const char*);
-
 // current time.
 unsigned long long r_time_now();
 
@@ -49,11 +40,7 @@ unsigned long long r_time_now();
 // the random capability,
 // used in https://github.com/radareorg/radare2/blob/master/libr/util/unum.c.
 
-void r_num_srand(int);
-
 void r_num_irand(void);
-
-int r_rand(int);
 
 int r_num_rand(int);
 

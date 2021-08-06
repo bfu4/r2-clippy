@@ -7,7 +7,7 @@
 // Radare2's print-clippy function
 void r2_clippy(const char* msg) {
   const char* f;
-  int msglen = r_str_len_utf8(msg);
+  int msglen = strlen(msg);
   char* s = strdup(r_str_pad(' ', msglen));
   char* l = strdup(r_str_pad('-', msglen));
   f = avatar_clippy_utf8[r_num_rand(R_ARRAY_SIZE(avatar_clippy_utf8))];
@@ -18,6 +18,7 @@ void r2_clippy(const char* msg) {
 }
 
 int main(int argc, const char** argv) {
+  // Check argument count.
   if (argc < 2) {
     return 1;
   }
