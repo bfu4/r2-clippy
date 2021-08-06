@@ -34,15 +34,16 @@ unsigned long long r_time_now(void) {
 
 // Pad a string.
 const char* r_str_pad(const char ch, int sz) {
-char pad[1024];
+  static char pad[1024];
   if (sz < 0) {
     sz = 0;
   }
-  memset(pad, ch, R_MIN(sz, sizeof(pad)));
-  if (sz < sizeof(pad)) {
+  int pad_sz = (int)sizeof(pad);
+  memset(pad, ch, R_MIN(sz, pad_sz));
+  if (sz < pad_sz) {
     pad[sz] = 0;
   }
-  pad[sizeof(pad) - 1] = 0;
+  pad[pad_sz - 1] = 0;
   return pad;
 }
 
