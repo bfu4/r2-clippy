@@ -1,4 +1,4 @@
-CFLAGS		= -O2 -std=c99 -Wall -Wextra 
+CFLAGS		= -O2 -Wall -Wextra 
 TARGET		= r2-clippy
 OBJECTS		=  r2-exported-util.o r2-clippy.o
 BUILD_DIR 	= build
